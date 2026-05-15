@@ -1,49 +1,53 @@
+<?php
+// includes/header.php
+require_once __DIR__ . '/../config/config.php';
+require_once __DIR__ . '/../includes/functions.php';
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo isset($pageTitle) ? $pageTitle . " | MSTechPC" : "MSTechPC - Profesjonalne Komputery Gamingowe i Serwis IT"; ?></title>
-    <meta name="description" content="<?php echo isset($metaDesc) ? $metaDesc : "MSTechPC - Twój ekspert od komputerów w Częstochowie i Kłobucku. Składanie komputerów gamingowych, serwis IT i nowoczesne rozwiązania technologiczne."; ?>">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- Google Fonts -->
+    <!-- Primary Meta Tags -->
+    <title><?php echo $pageTitle ?? APP_NAME; ?></title>
+    <meta name="title" content="<?php echo $pageTitle ?? APP_NAME; ?>">
+    <meta name="description" content="<?php echo $pageDesc ?? APP_DESC; ?>">
+    <meta name="keywords" content="komputery Częstochowa, serwis komputerowy Częstochowa, komputery gamingowe, MSTechPC, Kłobuck">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<?php echo BASE_URL; ?>">
+    <meta property="og:title" content="<?php echo $pageTitle ?? APP_NAME; ?>">
+    <meta property="og:description" content="<?php echo $pageDesc ?? APP_DESC; ?>">
+    <meta property="og:image" content="<?php echo BASE_URL; ?>/assets/img/og-image.jpg">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@700;800&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
+    <link rel="stylesheet" href="/assets/css/animations.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
 
     <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+
+    <!-- Scripts -->
+    <script defer src="/assets/js/app.js"></script>
+    <?php if (isset($extraScripts)): ?>
+        <?php foreach ($extraScripts as $script): ?>
+            <script defer src="/assets/js/<?php echo $script; ?>"></script>
+        <?php endforeach; ?>
+    <?php endif; ?>
 </head>
-<body class="dark-theme">
-    <header class="main-header">
-        <nav class="container">
-            <div class="logo">
-                <a href="/">MSTech<span>PC</span></a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="/">Start</a></li>
-                <li><a href="/shop/">Sklep</a></li>
-                <li><a href="/configurator.php">Konfigurator</a></li>
-                <li><a href="/serwis.php">Serwis</a></li>
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="/kontakt.php">Kontakt</a></li>
-            </ul>
-            <div class="nav-actions">
-                <a href="/cart.php" class="cart-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
-                <?php if (isLoggedIn()): ?>
-                    <a href="/panel.php" class="btn btn-outline">Konto</a>
-                <?php else: ?>
-                    <a href="/login.php" class="btn btn-outline">Zaloguj</a>
-                <?php endif; ?>
-            </div>
-            <div class="mobile-menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
+<body>
+    <?php include __DIR__ . '/navbar.php'; ?>
     <main>

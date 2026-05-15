@@ -1,136 +1,138 @@
 <?php
-require_once 'includes/functions.php';
-$pageTitle = "Konfigurator PC Premium - MSTechPC";
-include 'includes/header.php';
+$currentPage = 'configurator';
+$pageTitle = 'Konfigurator PC AI - MSTechPC';
+$extraScripts = ['configurator.js'];
+
+require_once 'includes/header.php';
 ?>
 
-<div class="configurator-wrapper section-padding">
+<section class="section">
     <div class="container">
-        <div class="config-header text-center">
+        <div class="text-center reveal mb-50">
             <h1 class="section-title">Konfigurator <span>PC AI</span></h1>
-            <p>Zbuduj swoją wymarzoną maszynę. Nasz system automatycznie sprawdzi kompatybilność.</p>
+            <p>Dobierz podzespoły, a nasz system sprawdzi ich kompatybilność w czasie rzeczywistym.</p>
         </div>
 
-        <div class="config-container grid grid-2">
-            <div class="config-steps">
-                <!-- Step 1: CPU -->
-                <div class="config-step glass-card" data-step="1">
-                    <h3>1. Procesor (CPU)</h3>
-                    <div class="component-list">
-                        <div class="component-item" data-price="1800" data-name="Intel Core i7-14700K">
-                            <span>Intel Core i7-14700K</span>
-                            <span class="price">+1 800 zł</span>
+        <div class="config-layout">
+            <div class="config-main reveal">
+                <!-- Group 1: CPU -->
+                <div class="config-group mb-40">
+                    <h3 class="group-title">1. Wybierz Procesor</h3>
+                    <div class="grid grid-2 gap-20 mt-20">
+                        <div class="config-item glass-card" data-type="cpu" data-name="Intel Core i7-14700K" data-price="1849">
+                            <div class="item-info">
+                                <h4>Intel Core i7-14700K</h4>
+                                <p>20 rdzeni, do 5.6 GHz</p>
+                            </div>
+                            <div class="item-price">+1 849 zł</div>
                         </div>
-                        <div class="component-item" data-price="2100" data-name="AMD Ryzen 9 7900X">
-                            <span>AMD Ryzen 9 7900X</span>
-                            <span class="price">+2 100 zł</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 2: GPU -->
-                <div class="config-step glass-card" data-step="2">
-                    <h3>2. Karta Graficzna (GPU)</h3>
-                    <div class="component-list">
-                        <div class="component-item" data-price="3500" data-name="NVIDIA RTX 4070 Ti Super">
-                            <span>NVIDIA RTX 4070 Ti Super</span>
-                            <span class="price">+3 500 zł</span>
-                        </div>
-                        <div class="component-item" data-price="8500" data-name="NVIDIA RTX 4090">
-                            <span>NVIDIA RTX 4090</span>
-                            <span class="price">+8 500 zł</span>
+                        <div class="config-item glass-card" data-type="cpu" data-name="AMD Ryzen 7 7800X3D" data-price="1799">
+                            <div class="item-info">
+                                <h4>AMD Ryzen 7 7800X3D</h4>
+                                <p>8 rdzeni, L3 Cache 96MB</p>
+                            </div>
+                            <div class="item-price">+1 799 zł</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Additional steps would go here -->
+                <!-- Group 2: GPU -->
+                <div class="config-group mb-40">
+                    <h3 class="group-title">2. Wybierz Kartę Graficzną</h3>
+                    <div class="grid grid-2 gap-20 mt-20">
+                        <div class="config-item glass-card" data-type="gpu" data-name="RTX 4070 Ti Super" data-price="3899">
+                            <div class="item-info">
+                                <h4>NVIDIA RTX 4070 Ti Super</h4>
+                                <p>16GB GDDR6X, DLSS 3.5</p>
+                            </div>
+                            <div class="item-price">+3 899 zł</div>
+                        </div>
+                        <div class="config-item glass-card" data-type="gpu" data-name="RTX 4080 Super" data-price="4999">
+                            <div class="item-info">
+                                <h4>NVIDIA RTX 4080 Super</h4>
+                                <p>16GB GDDR6X, Gaming 4K</p>
+                            </div>
+                            <div class="item-price">+4 999 zł</div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="config-summary">
-                <div class="glass-card sticky">
+            <!-- Sidebar Summary -->
+            <aside class="config-sidebar reveal">
+                <div class="glass-card sticky-sidebar">
                     <h3>Twoja Konfiguracja</h3>
-                    <ul id="selectedComponents">
-                        <!-- JS Dynamic -->
+                    <ul class="summary-list mt-20" id="configSummaryList">
+                        <li class="empty-msg">Nie wybrano jeszcze podzespołów</li>
                     </ul>
-                    <div class="summary-divider"></div>
-                    <div class="total-price-box">
+                    <div class="divider mt-20 mb-20"></div>
+                    <div class="total-box flex">
                         <span>Suma:</span>
-                        <span id="totalPrice">0 zł</span>
+                        <span id="configTotalPrice">0 zł</span>
                     </div>
-                    <button class="btn btn-primary btn-block">Zamów tę konfigurację</button>
+                    <button class="btn btn-primary btn-block mt-30">Dodaj do koszyka</button>
 
-                    <div class="ai-hint">
-                        <i class="fas fa-robot"></i>
-                        <p><strong>Porada AI:</strong> Wybrany procesor i karta graficzna idealnie pasują do gamingu w 4K.</p>
+                    <div class="ai-recommendation mt-30">
+                        <i class="fa-solid fa-robot"></i>
+                        <p><strong>Rekomendacja AI:</strong> Wybrany procesor i karta graficzna zapewnią stabilne 144 FPS w 1440p Ultra.</p>
                     </div>
                 </div>
-            </div>
+            </aside>
         </div>
     </div>
-</div>
+</section>
 
 <style>
-.configurator-wrapper { background: linear-gradient(to bottom, #0a0a0c, #111); }
-.config-container { align-items: start; gap: 40px; margin-top: 50px; }
-.config-step { margin-bottom: 30px; }
-.config-step h3 { font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 20px; color: var(--primary); }
-.component-list { display: flex; flex-direction: column; gap: 10px; }
-.component-item { display: flex; justify-content: space-between; padding: 15px; background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: 10px; cursor: pointer; transition: var(--transition); }
-.component-item:hover, .component-item.selected { background: rgba(0, 210, 255, 0.1); border-color: var(--primary); }
-.component-item .price { color: var(--success); font-weight: 600; }
+.config-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 40px;
+    align-items: start;
+}
+.group-title { font-size: 1.2rem; color: var(--primary); }
+.config-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid var(--border-glass);
+    padding: 20px;
+}
+.config-item.selected {
+    border-color: var(--primary);
+    background: rgba(0, 210, 255, 0.05);
+}
+.item-info h4 { font-size: 1rem; margin-bottom: 5px; }
+.item-info p { font-size: 0.8rem; color: var(--text-dark); }
+.item-price { font-weight: 700; color: var(--success, #00ff88); }
 
-.config-summary .sticky { position: sticky; top: 120px; }
-.config-summary h3 { font-family: var(--font-heading); margin-bottom: 20px; text-align: center; }
-#selectedComponents { margin-bottom: 20px; }
-#selectedComponents li { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.9rem; color: var(--text-muted); }
-.summary-divider { height: 1px; background: var(--glass-border); margin: 20px 0; }
-.total-price-box { display: flex; justify-content: space-between; font-size: 1.5rem; font-weight: 700; margin-bottom: 30px; }
-.btn-block { width: 100%; text-align: center; }
+.sticky-sidebar { position: sticky; top: 100px; }
+.summary-list li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    color: var(--text-muted);
+}
+.empty-msg { color: var(--text-dark) !important; font-style: italic; }
+.divider { height: 1px; background: var(--border-glass); }
+.total-box { justify-content: space-between; font-size: 1.4rem; font-weight: 800; }
+.btn-block { width: 100%; }
 
-.ai-hint { margin-top: 30px; padding: 15px; background: rgba(58, 123, 213, 0.1); border-left: 3px solid var(--secondary); border-radius: 4px; font-size: 0.85rem; display: flex; gap: 15px; align-items: center; }
-.ai-hint i { font-size: 1.5rem; color: var(--secondary); }
+.ai-recommendation {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    background: rgba(58, 123, 213, 0.1);
+    border-radius: var(--radius-md);
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+.ai-recommendation i { font-size: 1.5rem; color: var(--primary); }
+
+@media (max-width: 992px) {
+    .config-layout { grid-template-columns: 1fr; }
+}
 </style>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const items = document.querySelectorAll('.component-item');
-    const summaryList = document.getElementById('selectedComponents');
-    const totalPriceEl = document.getElementById('totalPrice');
-    let selections = {};
-
-    items.forEach(item => {
-        item.addEventListener('click', () => {
-            const step = item.closest('.config-step').dataset.step;
-
-            // Unselect others in this step
-            item.closest('.component-list').querySelectorAll('.component-item').forEach(i => i.classList.remove('selected'));
-
-            item.classList.add('selected');
-
-            selections[step] = {
-                name: item.dataset.name,
-                price: parseInt(item.dataset.price)
-            };
-
-            updateSummary();
-        });
-    });
-
-    function updateSummary() {
-        summaryList.innerHTML = '';
-        let total = 0;
-
-        for (const step in selections) {
-            const item = selections[step];
-            const li = document.createElement('li');
-            li.innerHTML = `<span>${item.name}</span> <span>+${item.price} zł</span>`;
-            summaryList.appendChild(li);
-            total += item.price;
-        }
-
-        totalPriceEl.innerText = total.toLocaleString() + ' zł';
-    }
-});
-</script>
-
-<?php include 'includes/footer.php'; ?>
+<?php require_once 'includes/footer.php'; ?>

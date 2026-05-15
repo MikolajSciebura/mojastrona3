@@ -1,19 +1,18 @@
 <?php
 // includes/functions.php
-
 session_start();
 
 /**
- * Sanitize output to prevent XSS
+ * Clean strings for XSS protection
  */
-function e($text) {
-    return htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
+function clean($data) {
+    return htmlspecialchars(trim($data), ENT_QUOTES, 'UTF-8');
 }
 
 /**
- * Generate CSRF token
+ * Generate CSRF Token
  */
-function generateCSRFToken() {
+function csrf_token() {
     if (empty($_SESSION['csrf_token'])) {
         $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
     }
@@ -21,38 +20,27 @@ function generateCSRFToken() {
 }
 
 /**
- * Verify CSRF token
+ * Verify CSRF Token
  */
-function verifyCSRFToken($token) {
+function verify_csrf($token) {
     return isset($_SESSION['csrf_token']) && hash_equals($_SESSION['csrf_token'], $token);
 }
 
 /**
- * Check if user is logged in
+ * Format Currency
  */
-function isLoggedIn() {
+function format_pln($amount) {
+    return number_format($amount, 2, ',', ' ') . ' zł';
+}
+
+/**
+ * Auth checks
+ */
+function is_logged_in() {
     return isset($_SESSION['user_id']);
 }
 
-/**
- * Check if user is admin
- */
-function isAdmin() {
+function is_admin() {
     return isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin';
-}
-
-/**
- * Redirect to a specific page
- */
-function redirect($path) {
-    header("Location: " . $path);
-    exit();
-}
-
-/**
- * Format price
- */
-function formatPrice($price) {
-    return number_format($price, 2, ',', ' ') . ' zł';
 }
 ?>

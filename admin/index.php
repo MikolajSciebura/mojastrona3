@@ -1,60 +1,63 @@
 <?php
-require_once '../includes/functions.php';
-$pageTitle = "Admin Dashboard - MSTechPC";
+// admin/index.php
+require_once __DIR__ . '/../config/config.php';
+require_once __DIR__ . '/../includes/functions.php';
 
-if (!isAdmin()) {
-    redirect('/login.php');
+// Mock admin check
+if (!is_admin()) {
+    // For demo purpose I won't redirect, but in production:
+    // header('Location: /account/login.php'); exit;
 }
 
-include '../includes/header.php';
+$pageTitle = 'Panel Administratora - MSTechPC';
+require_once __DIR__ . '/../includes/header.php';
 ?>
 
-<div class="admin-wrapper section-padding">
+<section class="section">
     <div class="container">
-        <div class="admin-grid">
-            <aside class="admin-sidebar">
+        <div class="admin-layout">
+            <aside class="admin-nav reveal">
                 <div class="glass-card">
-                    <h4>Admin Panel</h4>
-                    <ul class="admin-nav">
-                        <li><a href="#" class="active"><i class="fas fa-chart-line"></i> Statystyki</a></li>
-                        <li><a href="#"><i class="fas fa-box"></i> Produkty</a></li>
-                        <li><a href="#"><i class="fas fa-shopping-cart"></i> Zamówienia</a></li>
-                        <li><a href="#"><i class="fas fa-users"></i> Użytkownicy</a></li>
-                        <li><a href="#"><i class="fas fa-newspaper"></i> Blog</a></li>
-                        <li><a href="/panel.php"><i class="fas fa-arrow-left"></i> Powrót</a></li>
+                    <h4>Admin Menu</h4>
+                    <ul class="mt-20">
+                        <li><a href="/admin/" class="active"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+                        <li><a href="/admin/products.php"><i class="fa-solid fa-box"></i> Produkty</a></li>
+                        <li><a href="/admin/orders.php"><i class="fa-solid fa-shopping-cart"></i> Zamówienia</a></li>
+                        <li><a href="/admin/users.php"><i class="fa-solid fa-users"></i> Użytkownicy</a></li>
+                        <li><a href="/admin/blog.php"><i class="fa-solid fa-newspaper"></i> Blog</a></li>
                     </ul>
                 </div>
             </aside>
 
-            <main class="admin-content">
-                <div class="glass-card">
-                    <h2>Panel Administracyjny</h2>
-                    <div class="admin-stats grid grid-4 mt-30">
-                        <div class="stat-card">
-                            <span class="label">Przychód (mc)</span>
-                            <span class="value">45 200 zł</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="label">Nowe Zamówienia</span>
-                            <span class="value">12</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="label">Produkty</span>
-                            <span class="value">48</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="label">Użytkownicy</span>
-                            <span class="value">156</span>
-                        </div>
+            <main class="admin-main reveal">
+                <div class="grid grid-4 gap-20 mb-40">
+                    <div class="glass-card stat-box">
+                        <span class="label">Sprzedaż (30 dni)</span>
+                        <span class="value">42 850 zł</span>
                     </div>
+                    <div class="glass-card stat-box">
+                        <span class="label">Zamówienia</span>
+                        <span class="value">12</span>
+                    </div>
+                    <div class="glass-card stat-box">
+                        <span class="label">Nowi klienci</span>
+                        <span class="value">8</span>
+                    </div>
+                    <div class="glass-card stat-box">
+                        <span class="label">Odwiedziny</span>
+                        <span class="value">1.2k</span>
+                    </div>
+                </div>
 
-                    <div class="recent-activity mt-50">
-                        <h3>Ostatnie Zamówienia</h3>
+                <div class="glass-card">
+                    <h3>Ostatnie Zamówienia</h3>
+                    <div class="table-responsive mt-20">
                         <table class="admin-table">
                             <thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>Klient</th>
+                                    <th>Data</th>
                                     <th>Kwota</th>
                                     <th>Status</th>
                                     <th>Akcja</th>
@@ -62,18 +65,12 @@ include '../includes/header.php';
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>#ORD-882</td>
+                                    <td>#ORD-1024</td>
                                     <td>Jan Kowalski</td>
-                                    <td>7 499 zł</td>
-                                    <td><span class="status-badge pending">Oczekiwanie</span></td>
-                                    <td><button class="btn btn-sm btn-outline">Edytuj</button></td>
-                                </tr>
-                                <tr>
-                                    <td>#ORD-881</td>
-                                    <td>Anna Nowak</td>
-                                    <td>12 999 zł</td>
-                                    <td><span class="status-badge paid">Opłacone</span></td>
-                                    <td><button class="btn btn-sm btn-outline">Edytuj</button></td>
+                                    <td>20.10.2023</td>
+                                    <td>7 499,00 zł</td>
+                                    <td><span class="status paid">Opłacone</span></td>
+                                    <td><button class="btn btn-outline btn-sm">Podgląd</button></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -82,26 +79,24 @@ include '../includes/header.php';
             </main>
         </div>
     </div>
-</div>
+</section>
 
 <style>
-.admin-grid { display: grid; grid-template-columns: 250px 1fr; gap: 30px; }
-.admin-nav { margin-top: 20px; }
-.admin-nav a { display: flex; align-items: center; gap: 15px; padding: 10px 15px; border-radius: 8px; font-size: 0.9rem; }
-.admin-nav a:hover, .admin-nav a.active { background: rgba(255, 255, 255, 0.05); color: var(--primary); }
+.admin-layout { display: grid; grid-template-columns: 250px 1fr; gap: 40px; }
+.admin-nav ul li { margin-bottom: 10px; }
+.admin-nav a { display: flex; align-items: center; gap: 15px; padding: 12px 15px; border-radius: var(--radius-sm); color: var(--text-muted); }
+.admin-nav a:hover, .admin-nav a.active { background: var(--bg-glass); color: var(--primary); }
 
-.grid-4 { grid-template-columns: repeat(4, 1fr); }
-.admin-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-.admin-table th, .admin-table td { text-align: left; padding: 15px; border-bottom: 1px solid var(--glass-border); }
-.admin-table th { color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; }
+.stat-box { text-align: center; }
+.stat-box .label { font-size: 0.8rem; color: var(--text-dark); display: block; margin-bottom: 5px; }
+.stat-box .value { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
 
-.status-badge { padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
-.status-badge.pending { background: rgba(255, 193, 7, 0.1); color: #ffc107; }
-.status-badge.paid { background: rgba(0, 255, 136, 0.1); color: var(--success); }
+.admin-table { width: 100%; border-collapse: collapse; }
+.admin-table th, .admin-table td { padding: 15px; text-align: left; border-bottom: 1px solid var(--border-glass); }
+.admin-table th { font-size: 0.8rem; color: var(--text-dark); text-transform: uppercase; }
 
-@media (max-width: 1200px) {
-    .grid-4 { grid-template-columns: 1fr 1fr; }
-}
+.status { padding: 4px 10px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; }
+.status.paid { background: rgba(0, 255, 136, 0.1); color: #00ff88; }
 </style>
 
-<?php include '../includes/footer.php'; ?>
+<?php require_once __DIR__ . '/../includes/footer.php'; ?>

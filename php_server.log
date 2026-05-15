@@ -41,3 +41,66 @@
 [Fri May 15 04:12:06 2026] [::1]:33420 [200]: GET /assets/js/main.js
 [Fri May 15 04:12:06 2026] [::1]:33418 Closing
 [Fri May 15 04:12:06 2026] [::1]:33420 Closing
+[Fri May 15 04:35:39 2026] [::1]:55724 Accepted
+[Fri May 15 04:35:39 2026] [::1]:55724 [200]: GET /
+[Fri May 15 04:35:39 2026] [::1]:55724 Closing
+[Fri May 15 04:35:39 2026] [::1]:55736 Accepted
+[Fri May 15 04:35:39 2026] [::1]:55752 Accepted
+[Fri May 15 04:35:39 2026] [::1]:55764 Accepted
+[Fri May 15 04:35:39 2026] [::1]:55772 Accepted
+[Fri May 15 04:35:39 2026] [::1]:55782 Accepted
+[Fri May 15 04:35:39 2026] [::1]:55736 [200]: GET /assets/css/main.css
+[Fri May 15 04:35:39 2026] [::1]:55736 Closing
+[Fri May 15 04:35:39 2026] [::1]:55752 [200]: GET /assets/css/components.css
+[Fri May 15 04:35:39 2026] [::1]:55752 Closing
+[Fri May 15 04:35:39 2026] [::1]:55794 Accepted
+[Fri May 15 04:35:39 2026] [::1]:55764 [200]: GET /assets/css/animations.css
+[Fri May 15 04:35:39 2026] [::1]:55772 [200]: GET /assets/css/responsive.css
+[Fri May 15 04:35:39 2026] [::1]:55794 [200]: GET /assets/js/app.js
+[Fri May 15 04:35:39 2026] [::1]:55782 [404]: GET /assets/img/hero-pc.png - No such file or directory
+[Fri May 15 04:35:39 2026] [::1]:55782 Closing
+[Fri May 15 04:35:39 2026] [::1]:55764 Closing
+[Fri May 15 04:35:39 2026] [::1]:55772 Closing
+[Fri May 15 04:35:39 2026] [::1]:55794 Closing
+[Fri May 15 04:35:40 2026] [::1]:55808 Accepted
+[Fri May 15 04:35:40 2026] [::1]:55808 [200]: GET /shop/
+[Fri May 15 04:35:40 2026] [::1]:55808 Closing
+[Fri May 15 04:35:40 2026] [::1]:55822 Accepted
+[Fri May 15 04:35:40 2026] [::1]:55834 Accepted
+[Fri May 15 04:35:40 2026] [::1]:55842 Accepted
+[Fri May 15 04:35:40 2026] [::1]:55848 Accepted
+[Fri May 15 04:35:40 2026] [::1]:55822 [200]: GET /assets/css/main.css
+[Fri May 15 04:35:40 2026] [::1]:55822 Closing
+[Fri May 15 04:35:40 2026] [::1]:55864 Accepted
+[Fri May 15 04:35:40 2026] [::1]:55834 [200]: GET /assets/css/components.css
+[Fri May 15 04:35:40 2026] [::1]:55842 [200]: GET /assets/css/animations.css
+[Fri May 15 04:35:40 2026] [::1]:55834 Closing
+[Fri May 15 04:35:40 2026] [::1]:55842 Closing
+[Fri May 15 04:35:40 2026] [::1]:55848 [200]: GET /assets/css/responsive.css
+[Fri May 15 04:35:40 2026] [::1]:55848 Closing
+[Fri May 15 04:35:40 2026] [::1]:55866 Accepted
+[Fri May 15 04:35:40 2026] [::1]:55864 [404]: GET /assets/img/hero-pc.png - No such file or directory
+[Fri May 15 04:35:40 2026] [::1]:55864 Closing
+[Fri May 15 04:35:40 2026] [::1]:55866 [200]: GET /assets/js/app.js
+[Fri May 15 04:35:40 2026] [::1]:55866 Closing
+[Fri May 15 04:35:40 2026] [::1]:55882 Accepted
+[Fri May 15 04:35:40 2026] [::1]:55882 [200]: GET /configurator.php
+[Fri May 15 04:35:40 2026] [::1]:55882 Closing
+[Fri May 15 04:35:40 2026] [::1]:55896 Accepted
+[Fri May 15 04:35:40 2026] [::1]:55898 Accepted
+[Fri May 15 04:35:40 2026] [::1]:55910 Accepted
+[Fri May 15 04:35:40 2026] [::1]:55914 Accepted
+[Fri May 15 04:35:40 2026] [::1]:55896 [200]: GET /assets/css/main.css
+[Fri May 15 04:35:40 2026] [::1]:55896 Closing
+[Fri May 15 04:35:40 2026] [::1]:55898 [200]: GET /assets/css/components.css
+[Fri May 15 04:35:40 2026] [::1]:55898 Closing
+[Fri May 15 04:35:40 2026] [::1]:55910 [200]: GET /assets/css/animations.css
+[Fri May 15 04:35:40 2026] [::1]:55914 [200]: GET /assets/css/responsive.css
+[Fri May 15 04:35:40 2026] [::1]:55910 Closing
+[Fri May 15 04:35:40 2026] [::1]:55914 Closing
+[Fri May 15 04:35:40 2026] [::1]:55920 Accepted
+[Fri May 15 04:35:40 2026] [::1]:55924 Accepted
+[Fri May 15 04:35:40 2026] [::1]:55920 [200]: GET /assets/js/configurator.js
+[Fri May 15 04:35:40 2026] [::1]:55920 Closing
+[Fri May 15 04:35:40 2026] [::1]:55924 [200]: GET /assets/js/app.js
+[Fri May 15 04:35:40 2026] [::1]:55924 Closing
