@@ -1,0 +1,43 @@
+[Fri May 15 04:11:31 2026] PHP 8.3.6 Development Server (http://localhost:8000) started
+[Fri May 15 04:12:04 2026] [::1]:33312 Accepted
+[Fri May 15 04:12:04 2026] [::1]:33312 [200]: GET /
+[Fri May 15 04:12:04 2026] [::1]:33312 Closing
+[Fri May 15 04:12:05 2026] [::1]:33326 Accepted
+[Fri May 15 04:12:05 2026] [::1]:33332 Accepted
+[Fri May 15 04:12:05 2026] [::1]:33340 Accepted
+[Fri May 15 04:12:05 2026] [::1]:33326 [200]: GET /assets/css/style.css
+[Fri May 15 04:12:05 2026] [::1]:33326 Closing
+[Fri May 15 04:12:05 2026] [::1]:33332 [404]: GET /assets/img/local-service.jpg - No such file or directory
+[Fri May 15 04:12:05 2026] [::1]:33332 Closing
+[Fri May 15 04:12:05 2026] [::1]:33340 [200]: GET /assets/js/main.js
+[Fri May 15 04:12:05 2026] [::1]:33340 Closing
+[Fri May 15 04:12:06 2026] [::1]:33346 Accepted
+[Fri May 15 04:12:06 2026] [::1]:33346 [200]: GET /shop/
+[Fri May 15 04:12:06 2026] [::1]:33346 Closing
+[Fri May 15 04:12:06 2026] [::1]:33356 Accepted
+[Fri May 15 04:12:06 2026] [::1]:33358 Accepted
+[Fri May 15 04:12:06 2026] [::1]:33374 Accepted
+[Fri May 15 04:12:06 2026] [::1]:33356 [200]: GET /assets/css/style.css
+[Fri May 15 04:12:06 2026] [::1]:33356 Closing
+[Fri May 15 04:12:06 2026] [::1]:33358 [404]: GET /assets/img/pc1.png - No such file or directory
+[Fri May 15 04:12:06 2026] [::1]:33358 Closing
+[Fri May 15 04:12:06 2026] [::1]:33374 [404]: GET /assets/img/pc2.png - No such file or directory
+[Fri May 15 04:12:06 2026] [::1]:33374 Closing
+[Fri May 15 04:12:06 2026] [::1]:33390 Accepted
+[Fri May 15 04:12:06 2026] [::1]:33398 Accepted
+[Fri May 15 04:12:06 2026] [::1]:33390 [404]: GET /assets/img/pc3.png - No such file or directory
+[Fri May 15 04:12:06 2026] [::1]:33390 Closing
+[Fri May 15 04:12:06 2026] [::1]:33398 [404]: GET /assets/img/pc4.png - No such file or directory
+[Fri May 15 04:12:06 2026] [::1]:33398 Closing
+[Fri May 15 04:12:06 2026] [::1]:33400 Accepted
+[Fri May 15 04:12:06 2026] [::1]:33400 [200]: GET /assets/js/main.js
+[Fri May 15 04:12:06 2026] [::1]:33400 Closing
+[Fri May 15 04:12:06 2026] [::1]:33406 Accepted
+[Fri May 15 04:12:06 2026] [::1]:33406 [200]: GET /configurator.php
+[Fri May 15 04:12:06 2026] [::1]:33406 Closing
+[Fri May 15 04:12:06 2026] [::1]:33418 Accepted
+[Fri May 15 04:12:06 2026] [::1]:33420 Accepted
+[Fri May 15 04:12:06 2026] [::1]:33418 [200]: GET /assets/css/style.css
+[Fri May 15 04:12:06 2026] [::1]:33420 [200]: GET /assets/js/main.js
+[Fri May 15 04:12:06 2026] [::1]:33418 Closing
+[Fri May 15 04:12:06 2026] [::1]:33420 Closing
